@@ -51,7 +51,8 @@ public class TaskService {
         this.userService.findById(UserId);
 
         //executa a busca customizada no repositorio filtrando pelo id do usuario 
-        List<Task> tasks = this.taskRepository.findByUserId(UserId);
+        List<Task> tasks = this.taskRepository.findByUser_Id(UserId);
+        
 
         //retorna a lista de tarefas
         return tasks;
@@ -65,7 +66,7 @@ public class TaskService {
             User user = this.userService.findById(obj.getUser().getId());
 
             //define o ID como null para garantir que o JPA realize uma inserção(INSERT) e não uma atualização
-            obj.setId(id:null);
+            obj.setId(null);
 
             //associa a entidade User completa e validada a tarefa
             obj.setUser(user);

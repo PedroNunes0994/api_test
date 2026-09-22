@@ -17,6 +17,8 @@ import api_teste.ds.models.Task;
 import api_teste.ds.repositories.TaskRepository;
 //importa a interface do repositorio responsavel pelas operações no banco de dados
 import api_teste.ds.repositories.UserRepository;
+//importa o models.User
+import api_teste.ds.models.User;
 
 @Service 
 public class UserService {
@@ -43,9 +45,9 @@ public User create(User obj){
 
     obj.setId(null);
 
-    obj.this.userRepository.save(obj);
+    this.userRepository.save(obj);
 
-    this.taskRepository.saveAll(obj.getClass());
+    this.taskRepository.saveAll(obj.getTasks());
 
     return obj;
 }
@@ -65,6 +67,7 @@ public User create(User obj){
 
     
     public void delete(Long Id){
+
 
         findById(Id);
 
