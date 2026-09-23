@@ -58,7 +58,7 @@ public ResponseEntity<Void> update(@Validated(UpdateUser.class)@RequestBody User
 @DeleteMapping ("/{id}")//Mapeia requisições HTTP DELETE na rota "/user/{id}" (exclusão de usuario)
 public ResponseEntity<Void> delete(@PathVariable Long id){ // Captura o Id da URL a ser deletado
     this.userService.delete(id); //invoca um metodo de deleção do serviço
-    return ResponseEntity.noContent().build()//Retorna código HTTP 204 (no content confirmando a exclusão)
+    return ResponseEntity.noContent().build();//Retorna código HTTP 204 (no content confirmando a exclusão)
 
     }
 }
