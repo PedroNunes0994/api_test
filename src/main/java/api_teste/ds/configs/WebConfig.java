@@ -1,0 +1,16 @@
+package api_teste.ds.configs;
+
+import org.springframework.context.annotation.Configuration;//importa a anotação de configuração do Spring Container
+import org.springframework.web.servlet.config.annotation.CorsRegistry;//importa a classe responsável por registrar as regras do CORS
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;//import a anotação que habilita os recursos do spring Web MVC
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;//importa a interface de costumização do Spring MVC
+
+@Configuration //indica que essa classe possui configurações de Beans que devem ser inicializados com o Spring
+@EnableWebMvc //importa e ativa o suporte básico as requisições e controloadores Web Mvc do Spring
+public class WebConfig implements WebMvcConfigurer { //Classe de configuração que implementa o contrato de customização do Spring 
+    
+    @Override //sobeescreve o metodo do mapemaneot CORS padrão da interface WebMvcConfigurer
+    public void addCorsMappings(CorsRegistry registry){ //metodo indicado pelo Spring para registrar as regras do CORS
+        registry.addMapping("/**");//Libera qualquer rota da API(coringa "/**") para aceitar chamadas externas
+    }
+}

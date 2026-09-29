@@ -1,0 +1,34 @@
+<!DOCTYPE html><!--Declara que este documento segue o padrão HTML 5-->
+<html lang="en"><!--Define o idioma principal do documento como portugues do Brasil-->
+
+<head><!--cabeçalho do documento contendo metadados links externos-->
+    <meta charset="UTF-8"><!--Define a codificação de caracteres UTF-8 como suporte a acentos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Garante suporte a telas responsivas em dispositivos móveis-->
+    <title>Tarefas App</title><!--Define titulo que aparece na aba do navegador  -->
+    <!--link de importação da folha de estilos (CSS) do boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head><!--fechamento da seção de metadados-->
+
+<body><!--Corpo da pagina onde fica o conteudo visual para o usuario-->
+    <!--Conteiner so spinner do carregamento-->
+    <div class ="d-flex justify-content-center">
+        <!--Div que reinderiza o efeito visual de carregamento rotativo-->
+        <div class="spinner-border" role="status" id="Loading">
+            <!--texto oculto para leitores de tela indicando estado de carregamento-->
+            <span class-="sr-only"></span>
+        </div><!--Fechaemnto do elemento do spinner-->
+    </div><!--Fechamento do conteiner flex-->
+    
+    <!--titulo da seção centralizada usando um classe utilitaria do Boostrap-->
+    <p class="h1 text-center">Tarefas de um usuário</p>
+     <!--Estrutura da tabela HTMl estabilizada com as classes utilitarias do boostrap -->
+        <table class="table table-hover" id="tasks">
+        <!--Conteudo interno (cabeçalhos e linhas) sera inserido via sript.js-->            
+        </table>
+        <!--Script ´para componentes interativos do boostrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!--Importação do arquivo Script.js proprio contendo a logica de integração com API-->
+        <script src="script.js"></script>
+    </body>
+
+</html>  
