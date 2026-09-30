@@ -23,12 +23,14 @@ import api_teste.ds.models.User.UpdateUser;
 import api_teste.ds.services.UserService;
 
 
+
 @RestController //define a classe como um controlador REST que retorna respostas en JSON
 @RequestMapping ("/user")//Define que todas as rotas desta classe terão como prefixo o caminho "/user"
 @Validated //ativa a verificação de validações nos parametros recebidos no controller 
 
 public class UserController {
 
+    
     @Autowired 
     private UserService userService;
 

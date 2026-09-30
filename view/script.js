@@ -35,11 +35,12 @@ function show(tasks){
         }
         // Injeta a string acumulada diretamente na tabela através do ID 'tasks'
         document.getElementById("tasks").innerHTML = tab;
+    }
         //Função assincrona encarregada de realizar a requisição  HTTP GET para a API
         async function getAPI(url) {
 
             //Executa a requisição HTTP usando a API nativa fetch() e aguarda(wait) a resposta da rede
-            const response = await fetch(url,{method:"GET"});
+            const response = await fetch(url, { method:"GET" });
 
             //Converte o corpo da resposta HTTP e formato JSON e gurada na variavel
             var data = await response.json();
@@ -48,9 +49,7 @@ function show(tasks){
             if(response){
                 hideLoader();
             }
+            show(data);
         }
-        //
-        show(data);
-            
-}
+        
 getAPI(url);
