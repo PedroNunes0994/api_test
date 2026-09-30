@@ -44,4 +44,9 @@ function show(tasks){
             hideLoader();
         }
     }
+
+    show(data);
+
 }
+
+getAPI(url);
